@@ -1,1 +1,1 @@
-# BBO_CapstoneProject
+# BlackBoxOptimization_CP
