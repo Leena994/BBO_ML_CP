@@ -1,1 +1,1 @@
-# BlackBoxOptimization_CP
+# BlackBoxOptimization
