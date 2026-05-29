@@ -4,11 +4,13 @@
 
 ## **Section 1: Project Overview**
 
-This project is part of a Bayesian optimisation challenge where the goal is to find the maximum output of eight unknown black-box functions by submitting carefully chosen input queries. Each function is synthetic but designed to mimic real-world complexity — including noise, multiple local peaks, and non-linear behaviour. Because each function can only be queried occasionally, every submission must count.
+This project is part of a Bayesian optimisation challenge where the goal is to find the maximum output of eight unknown black-box functions by submitting carefully chosen input queries. 
+Each function is synthetic but designed to mimic real-world complexity including noise, multiple local peaks, and non-linear behaviour. Because each function can only be queried occasionally, 
+every submission must count.
 
-The goal is to maximise each function's output using as few queries as possible, without ever inspecting the function directly. This mirrors real-world scenarios such as hyperparameter tuning, drug discovery, and chemical process optimisation — situations where evaluating a candidate solution is expensive or slow.
-
-This project builds skills in **probabilistic modelling**, **sequential decision-making**, and **adaptive strategy** — all directly transferable to data science roles involving experimentation under uncertainty.
+The goal is to maximise each function's output using as few queries as possible, without ever inspecting the function directly. This mirrors real-world scenarios such as hyperparameter tuning, drug discovery, 
+and chemical process optimisation situations where evaluating a candidate solution is expensive or slow. This project builds skills in **probabilistic modelling**, **sequential decision-making**, and **adaptive strategy** 
+all directly transferable to data science roles involving experimentation under uncertainty.
 
 ---
 
@@ -47,7 +49,6 @@ The objective is to find the input combination that maximises each function's ou
 
 | Constraint | Description |
 |-----------|-------------|
-| Fixed budget | Queries are biweekly — wasted queries cannot be recovered |
 | Unknown structure | No formula, no gradient, no way to inspect the function |
 | Local optima | A good result in one region does not guarantee it is the global maximum |
 | Variable surfaces | Some functions are smooth, others are noisy or nearly flat with one sharp spike |
@@ -57,33 +58,18 @@ The objective is to find the input combination that maximises each function's ou
 
 ## **Section 4: Technical Approach**
 
-### **Round 1 — Baseline UCB Exploration**
+The optimisation approach was iterative and data-driven, with each submission informed by the results obtained from previous evaluations. 
+Initial efforts focused on exploring the search space to identify promising regions, after which the search became increasingly concentrated around areas demonstrating strong performance. 
+Different strategies were applied depending on the observed behaviour of each function, including local refinement of high-performing regions and broader exploration where improvement remained limited or uncertain.
 
-All functions were modelled with **Gaussian Process (GP)** models using a Matérn kernel. Queries were selected via **Upper Confidence Bound (UCB)** acquisition, with beta values assigned per function — higher beta for complex surfaces to encourage exploration, lower beta for simpler functions to encourage exploitation.
+Throughout the project, optimisation decisions were continuously adapted based on emerging evidence. Functions showing consistent gains were subjected to more focused searches, 
+while functions exhibiting complex or unstable behaviour received additional exploration to improve understanding of the solution space. This adaptive approach enabled efficient 
+use of the available query budget while progressively improving the quality of the solutions identified.
 
-### **Round 2 — Performance-Based Differentiation**
 
-After reviewing results, strategies were differentiated for the first time. Functions showing consistent improvement kept their UCB settings. Functions showing no improvement were switched to exploitation-focused strategies, including tighter search areas, lower beta values, and in one case a systematic **grid scan** to map the space before further optimisation.
+### **What Makes This Approach Thoughtful?**
 
-### **Round 3 — Function-Specific Fine-Tuning**
+Each function is treated as an independent problem. Strategy decisions are driven entirely by data if a function does not improve, the strategy changes. If a peak is found, the search locks onto it. 
+This adaptive approach mirrors how a data scientist must respond to model behaviour when the underlying system is unknown.
 
-Each function received its own tailored strategy based on accumulated evidence. A grid scan continued for the function whose output remained near zero. An **anchor-and-perturb** approach was applied to a function whose promising region had been abandoned — this locks onto the best known point and varies one input at a time to find what drives improvement. Tight exploitation was applied immediately when a sharp peak was found, to extract further gains before the search could drift away.
-
-### **Balancing Exploration and Exploitation**
-
-The core principle applied throughout is to explore broadly until a promising region is found, then exploit tightly before moving on.
-
-| Parameter | Effect |
-|-----------|--------|
-| High beta | More exploration — searches new regions |
-| Low beta | More exploitation — refines known good regions |
-| xi close to zero | Near-pure exploitation via Expected Improvement |
-| Tight search radius | Constrains search close to the best known point |
-
-### **What Makes This Approach Thoughtful**
-
-Each function is treated as an independent problem. Strategy decisions are driven entirely by data — if a function does not improve, the strategy changes. If a peak is found, the search locks onto it. This adaptive approach mirrors how a data scientist must respond to model behaviour when the underlying system is unknown.
-
----
-
-*Last updated: Week 3 — strategy continues to evolve each round.*
+--- 
