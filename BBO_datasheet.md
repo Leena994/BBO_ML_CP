@@ -1,10 +1,13 @@
 BBO Capstone Project Datasheet for the Query History and Function Evaluations Dataset
 
 1. Motivation:
-This dataset was created to support a Black-Box Optimisation (BBO) challenge, specifically to document and analyse the query history and function evaluation outputs generated across ten rounds of optimisation. The primary task it supports is the sequential maximisation of eight unknown synthetic functions using Gaussian Process models and acquisition functions, without direct access to the function structure, gradients, or closed-form expressions.
-The dataset was created as part of the Imperial College Professional Certificate in Machine Learning and AI, under the supervision of the programme facilitators. It serves both as a record of optimisation decisions and as a reproducible audit trail for evaluating strategy evolution across rounds.
+   This dataset was created to support a Black-Box Optimisation (BBO) challenge, specifically to document and analyse the query history and function evaluation outputs
+   generated across ten rounds of optimisation. The primary task it supports is the sequential maximisation of eight unknown synthetic functions using Gaussian Process
+   models and acquisition functions, without direct access to the function structure, gradients, or closed-form expressions.
+   The dataset was created as part of the Imperial College Professional Certificate in Machine Learning and AI, under the supervision of the programme facilitators. It
+   serves both as a record of optimisation decisions and as a reproducible audit trail for evaluating strategy evolution across rounds.
 
-2. Composition:
+3. Composition:
 The dataset consists of two components per function: the input query arrays submitted across all rounds, and the corresponding scalar output values returned by each function evaluation.
 Function	Input Dimensions	Output Dimensions	Real-World Analogy
 Function 1	2D (array of 2 values)	1D scalar	Radiation field contamination detection
