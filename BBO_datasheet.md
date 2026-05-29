@@ -19,11 +19,11 @@ Function 6	5D (array of 5 values)	1D scalar	Cake recipe scoring (negative by des
 Function 7	6D (array of 6 values)	1D scalar	ML model hyperparameter tuning
 Function 8	8D (array of 8 values)	1D scalar	Neural network training configuration
 
-All input values are continuous and bounded between 0 and 1, represented to six decimal places. Output values are scalar real numbers. All tasks are framed as
-maximisation problems; where the underlying objective is naturally a minimisation (such as side effects in Function 3), the output has been negated so that higher
-values consistently indicate better performance.
-The dataset does not contain personally identifiable information. There are no missing values in the output records, though some functions returned near-zero outputs
-during early rounds due to poor initialisation, which is noted as a known gap in early-round coverage of the search space.
+   All input values are continuous and bounded between 0 and 1, represented to six decimal places. Output values are scalar real numbers. All tasks are framed as
+   maximisation problems; where the underlying objective is naturally a minimisation (such as side effects in Function 3), the output has been negated so that higher
+   values consistently indicate better performance.
+   The dataset does not contain personally identifiable information. There are no missing values in the output records, though some functions returned near-zero outputs
+   during early rounds due to poor initialisation, which is noted as a known gap in early-round coverage of the search space.
 
 3. Collection Process:
 Queries were generated through an iterative, strategy-driven process across ten biweekly rounds. In each round, input arrays were constructed based on Gaussian Process model outputs and acquisition function evaluations. The specific strategy used evolved across rounds as follows:
@@ -31,7 +31,7 @@ Queries were generated through an iterative, strategy-driven process across ten 
 •	Round 2: Performance-based differentiation, switching underperforming functions to exploitation-focused strategies and introducing grid scans where outputs remained near zero.
 •	Round 3 onwards: Function-specific fine-tuning using anchor-and-perturb methods, tight exploitation around identified peaks, and continued grid scanning for unresolved surfaces.
 
-The dataset was collected between the programme start date and the final submission round. No human subjects were involved and no ethical review was required. All queries were submitted through the course platform interface, with outputs recorded upon each evaluation response.
+   The dataset was collected between the programme start date and the final submission round. No human subjects were involved and no ethical review was required. All      queries were submitted through the course platform interface, with outputs recorded upon each evaluation response.
 
 4. Preprocessing and Uses:
 No preprocessing was applied to the raw input or output values beyond formatting to six decimal places for submission. The raw query history and evaluation outputs
