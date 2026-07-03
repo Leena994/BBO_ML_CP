@@ -130,10 +130,10 @@ BBO_ML_CP
 ├── Data/
 ├── Images/
 ├── Gaussian-Bayesian Weekly Optimisation Tracker.ipynb
-├── README.md
+├── README_NON_TECHNICAL.md
 ├── BBO_Datasheet.md
 ├── BBO_Model_Card.md
-├── BBO_Project_Overview.md
+├── README_TECHNICAL.md
 └── LICENSE
 ```
 
