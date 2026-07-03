@@ -87,8 +87,33 @@ The optimisation decisions applied across all eight functions, end to end.
 
 ---
 
+## Example Dashboard — Function F02
+![F01](Images/function_02_dashboard.png)
+
+---
+
+## Example Dashboard — Function F03
+![F01](Images/function_03_dashboard.png)
+
+---
+
+## Example Dashboard — Function F04
+![F01](Images/function_04_dashboard.png)
+
+---
+
 ## Example Dashboard — Function F05
 ![F05](Images/function_05_dashboard.png)
+
+---
+
+## Example Dashboard — Function F06
+![F05](Images/function_06_dashboard.png)
+
+---
+
+## Example Dashboard — Function F07
+![F05](Images/function_07_dashboard.png)
 
 ---
 
