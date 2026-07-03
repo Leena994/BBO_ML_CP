@@ -71,32 +71,42 @@ For every benchmark function, the notebook automatically generates:
 
 ---
 
-## Portfolio Summary
-![Overall Summary](Images/Weekly_progress_overview.png)
-
----
-
-## Weekly Strategy
-![Strategy](Images/strategy_followed_each_week.png)
-
----
-
-## Applied Strategy Table
-![Applied Strategy](Images/final_applied_strategy_table.png)
-
----
-
-## Example Dashboard – Function F01
+## Example Dashboard — Function F01
 ![F01](Images/function_01_dashboard.png)
 
 ---
 
-## Example Dashboard – Function F05
+## Example Dashboard — Function F02
+![F01](Images/function_02_dashboard.png)
+
+---
+
+## Example Dashboard — Function F03
+![F01](Images/function_03_dashboard.png)
+
+---
+
+## Example Dashboard — Function F04
+![F01](Images/function_04_dashboard.png)
+
+---
+
+## Example Dashboard — Function F05
 ![F05](Images/function_05_dashboard.png)
 
 ---
 
-## Example Dashboard – Function F08
+## Example Dashboard — Function F06
+![F05](Images/function_06_dashboard.png)
+
+---
+
+## Example Dashboard — Function F07
+![F05](Images/function_07_dashboard.png)
+
+---
+
+## Example Dashboard — Function F08
 ![F08](Images/function_08_dashboard.png)
 
 ---
@@ -109,7 +119,7 @@ BBO_ML_CP
 ├── Data/
 ├── Images/
 ├── Gaussian-Bayesian Weekly Optimisation Tracker.ipynb
-├── README.md
+├── README_NON_TECHNICAL.md
 ├── README_Technical.md
 ├── BBO_Datasheet.md
 ├── BBO_Model_Card.md
@@ -122,7 +132,7 @@ BBO_ML_CP
 
 - [`BBO_Datasheet.md`](BBO_Datasheet.md) — data sources, structure, and provenance
 - [`BBO_Model_Card.md`](BBO_Model_Card.md) — modelling approach, assumptions, and limitations
-- [`BBO_Project_Overview.md`](BBO_Project_Overview.md) — extended project write-up
+- [`README_NON_TECHNICAL.md`](README_NON_TECHNICAL.md) — extended non-technical project write-up
 
 ---
 
