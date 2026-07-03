@@ -143,7 +143,7 @@ BBO_ML_CP
 
 - [`BBO_Datasheet.md`](BBO_Datasheet.md) — data sources, structure, and provenance
 - [`BBO_Model_Card.md`](BBO_Model_Card.md) — modelling approach, assumptions, and limitations
-- [`BBO_Project_Overview.md`](BBO_Project_Overview.md) — extended write-up of the project
+- [`README_Technical.md`](README_Technical.md) — extended technical write-up of the project
 
 ---
 
