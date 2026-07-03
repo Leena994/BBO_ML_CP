@@ -84,13 +84,22 @@ Functions showing consistent gains were subjected to more focused searches, whil
 ## Repository Structure
 
 ```
+BBO_ML_CP
+│
+├── Data
+│
+├── Images
+│   ├── Weekly_progress_overview.png
+│   ├── function_01_dashboard.png
+│   ├── function_02_dashboard.png
+│   ├── ...
+│   └── function_08_dashboard.png
+│
+├── Gaussian-Bayesian Weekly Optimisation Tracker.ipynb
 ├── README.md
-├── datasheet/
-│   └── BBO_Datasheet.docx
-├── model_card/
-│   └── BBO_Model_Card.docx
-└── data/
-    └── query_history/
+├── BBO_Model_Card.md
+├── BBO_Datasheet.md
+└── LICENSE
 ```
 
 ---
