@@ -4,21 +4,21 @@
 
 ## Overview
 
-This project solves eight independent optimisation problems where the relationship between inputs and outputs is completely unknown — a black box. Each function can only be queried by submitting an input and observing the output it returns; the underlying mathematics is never revealed.
+This project solves eight independent optimisation problems where the relationship between inputs and outputs is completely unknown a black box. Each function can only be queried by submitting an input and observing the output it returns; the underlying mathematics is never revealed.
 
-Because every evaluation is costly, the goal isn't just to find a good solution — it's to find it in as few evaluations as possible. This project builds a Bayesian optimisation pipeline that models each function's behaviour from limited observations, decides where to search next, and adapts its strategy week over week as evidence accumulates.
+Because every evaluation is costly, the goal isn't just to find a good solution; it's to find it in as few evaluations as possible. This project builds a Bayesian optimisation pipeline that models each function's behaviour from limited observations, decides where to search next, and adapts its strategy week over week as evidence accumulates.
 
-Alongside the optimisation engine, the project includes a full dashboard-generation system that turns the search history into a clear, visual record of what was tried, why, and what happened — for eight functions across twelve rounds of experimentation.
+Alongside the optimisation engine, the project includes a full dashboard-generation system that turns the search history into a clear, visual record of what was tried, why, and what happened for eight functions across twelve rounds of experimentation.
 
 ---
 
 ## Why This Problem Matters
 
-Many real-world problems share the same shape: you can't test every possible option, and each test is expensive, slow, or resource-intensive. Tuning a manufacturing process, screening a chemical compound, or configuring a machine learning model all come down to the same question — *where do I run my next experiment to learn the most, or do the best, with the least waste?*
+Many real-world problems share the same shape: you can't test every possible option, and each test is expensive, slow, or resource-intensive. Tuning a manufacturing process, screening a chemical compound, or configuring a machine learning model all come down to the same question *where do I run my next experiment to learn the most, or do the best, with the least waste?*
 
-Rather than searching by trial and error, this project uses a search process that learns from every prior result before choosing what to try next. Early on, it explores broadly to understand each function's behaviour. As evidence builds, it shifts toward exploitation — concentrating evaluations around the strongest known regions while still allowing for course correction if a function's behaviour shifts.
+Rather than searching by trial and error, this project uses a search process that learns from every prior result before choosing what to try next. Early on, it explores broadly to understand each function's behaviour. As evidence builds, it shifts toward exploitation concentrating evaluations around the strongest known regions while still allowing for course correction if a function's behaviour shifts.
 
-The accompanying dashboards make this process auditable: every decision — whether to explore, exploit, or roll back to a previous basin — is documented and visualised, not just the final result.
+The accompanying dashboards make this process auditable: every decision — whether to explore, exploit, or roll back to a previous basin is documented and visualised, not just the final result.
 
 ---
 
@@ -42,10 +42,10 @@ Each function stands in for a distinct real-world optimisation scenario, spannin
 ## Approach
 
 - **Surrogate modelling:** A Gaussian Process is fitted to each function's accumulated history, providing both a prediction and an uncertainty estimate at any candidate point.
-- **Adaptive strategy selection:** Each function is assigned a search strategy — broad exploration (UCB), anchored local exploitation, trust-region refinement, or rollback — chosen per week based on how that function has behaved so far.
+- **Adaptive strategy selection:** Each function is assigned a search strategy broad exploration (UCB), anchored local exploitation, trust-region refinement, or rollback chosen per week based on how that function has behaved so far.
 - **Anchor-based safety net:** Rather than always chasing the most recent result, the pipeline tracks the strongest verified result across the full history for each function and anchors the next search around it, preventing a single noisy week from derailing progress.
 - **External benchmarking:** An independent reference dataset is checked against each function's own best result, and only adopted where it demonstrably outperforms it.
-- **Full transparency:** Every strategy switch, rollback, and exploitation decision is logged and rendered into the dashboards below — the reasoning is visible, not just the outcome.
+- **Full transparency:** Every strategy switch, rollback, and exploitation decision is logged and rendered into the dashboards below the reasoning is visible, not just the outcome.
 
 ---
 
